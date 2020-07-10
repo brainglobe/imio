@@ -1,19 +1,7 @@
-import os
-import math
-import nrrd
-import logging
 import tifffile
 import warnings
 import numpy as np
 
-from skimage import transform
-from tqdm import tqdm
-from natsort import natsorted
-from concurrent.futures import ProcessPoolExecutor
-
-from imlib.general.system import get_sorted_file_paths, get_num_processes
-
-from .utils import check_mem, scale_z
 
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
@@ -69,14 +57,14 @@ def to_tiffs(img_volume, path_prefix, path_suffix="", pad_width=4):
         image (z plane number) will be padded
     :return:
     """
-    z_size = img_volume.shape[-1]
+    z_size = img_volume.shape[0]
     if z_size > 10 ** pad_width:
         raise ValueError(
             "Not enough padding digits {} for value"
             " {}".format(pad_width, z_size)
         )
     for i in range(z_size):
-        img = img_volume[:, :, i]
+        img = img_volume[i, :, :]
         dest_path = "{}_{}{}.tif".format(
             path_prefix, str(i).zfill(pad_width), path_suffix
         )

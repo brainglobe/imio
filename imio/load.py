@@ -170,7 +170,7 @@ def load_img_stack(
         stack = np.array(downsampled_stack)
 
     if stack.ndim == 3:
-        stack = np.rollaxis(stack, 0, 3)
+        # stack = np.rollaxis(stack, 0, 3)
         if z_scaling_factor != 1:
             logging.debug("Downsampling stack in Z")
             stack = scale_z(stack, z_scaling_factor)
@@ -397,7 +397,8 @@ def threaded_load_from_sequence(
         )
         stacks.append(process)
     stack = np.dstack([s.result() for s in stacks])
-    return stack
+    return np.moveaxis(stack, 2, 0) # back to z first
+
 
 
 def load_from_paths_sequence(
@@ -453,7 +454,6 @@ def load_from_paths_sequence(
                 )
         volume[:, :, i] = img
     return volume
-
 
 def generate_paths_sequence_file(
     input_folder,
