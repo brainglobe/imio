@@ -397,8 +397,7 @@ def threaded_load_from_sequence(
         )
         stacks.append(process)
     stack = np.dstack([s.result() for s in stacks])
-    return np.moveaxis(stack, 2, 0) # back to z first
-
+    return np.moveaxis(stack, 2, 0)  # back to z first
 
 
 def load_from_paths_sequence(
@@ -454,6 +453,7 @@ def load_from_paths_sequence(
                 )
         volume[:, :, i] = img
     return volume
+
 
 def generate_paths_sequence_file(
     input_folder,
