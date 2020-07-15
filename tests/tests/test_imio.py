@@ -58,7 +58,10 @@ def test_load_img_sequence(tmpdir, start_array):
     )
 
     reloaded_array = load.load_any(
-        str(img_sequence_file), sort_input_file=True, load_parallel=True
+        str(img_sequence_file),
+        sort_input_file=True,
+        load_parallel=True,
+        n_free_cpus=0,
     )
     assert (reloaded_array == start_array).all()
 
