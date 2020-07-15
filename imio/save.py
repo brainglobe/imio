@@ -44,7 +44,7 @@ def to_tiff(img_volume, dest_path):
     tifffile.imsave(dest_path, img_volume)
 
 
-def to_tiff_series(img_volume, path_prefix, path_suffix="", pad_width=4):
+def to_tiff_series(img_volume, path_prefix, path_suffix=""):
     """
     Save the image volume (numpy array) as a sequence of tiff planes.
     Each plane will have a filepath of the following for:
@@ -53,16 +53,14 @@ def to_tiff_series(img_volume, path_prefix, path_suffix="", pad_width=4):
     :param np.ndarray img_volume: The image to be saved
     :param str path_prefix:  The prefix for each plane
     :param str path_suffix: The suffix for each plane
-    :param int pad_width: The number of digits on which the index of the
-        image (z plane number) will be padded
     :return:
     """
     z_size = img_volume.shape[0]
-    if z_size > 10 ** pad_width:
-        raise ValueError(
-            "Not enough padding digits {} for value"
-            " {}".format(pad_width, z_size)
-        )
+    pad_width = int(round(z_size / 10)) + 1
+    # if z_size > 10 ** pad_width:
+    #     raise ValueError(
+    #         f"Not enough padding digits ({pad_width}) for value: {z_size}"
+    #     )
     for i in range(z_size):
         img = img_volume[i, :, :]
         dest_path = "{}_{}{}.tif".format(

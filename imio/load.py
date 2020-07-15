@@ -202,9 +202,9 @@ def load_nii(src_path, as_array=False, as_numpy=False):
 
 def load_from_folder(
     src_folder,
-    x_scaling_factor,
-    y_scaling_factor,
-    z_scaling_factor,
+    x_scaling_factor=1,
+    y_scaling_factor=1,
+    z_scaling_factor=1,
     anti_aliasing=True,
     file_extension="",
     load_parallel=False,
@@ -249,9 +249,9 @@ def load_from_folder(
 
 def load_img_sequence(
     img_sequence_file_path,
-    x_scaling_factor,
-    y_scaling_factor,
-    z_scaling_factor,
+    x_scaling_factor=1,
+    y_scaling_factor=1,
+    z_scaling_factor=1,
     anti_aliasing=True,
     load_parallel=False,
     sort=False,
@@ -299,9 +299,9 @@ def load_img_sequence(
 
 def load_image_series(
     paths,
-    x_scaling_factor,
-    y_scaling_factor,
-    z_scaling_factor,
+    x_scaling_factor=1,
+    y_scaling_factor=1,
+    z_scaling_factor=1,
     anti_aliasing=True,
     load_parallel=False,
     n_free_cpus=2,

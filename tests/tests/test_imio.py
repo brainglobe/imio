@@ -26,10 +26,18 @@ def test_tiff_io(tmpdir, layer):
     assert (reloaded == layer).all()
 
 
-def test_to_tiffs(tmpdir, start_array):
+def test_to_tiff_stack(tmpdir, start_array):
+    folder = str(tmpdir)
+    image_path = os.path.join(folder, "image.tiff")
+    save.to_tiff(start_array, image_path)
+    reloaded_array = load.load_any(image_path)
+    assert (reloaded_array == start_array).all()
+
+
+def test_to_tiff_series(tmpdir, start_array):
     folder = str(tmpdir)
     save.to_tiff_series(start_array, os.path.join(folder, "start_array"))
-    reloaded_array = load.load_from_folder(folder, 1, 1, 1)
+    reloaded_array = load.load_from_folder(folder)
     assert (reloaded_array == start_array).all()
 
 
@@ -45,7 +53,7 @@ def test_load_img_sequence(tmpdir, start_array):
             ]
         )
     )
-    reloaded_array = load.load_img_sequence(str(img_sequence_file), 1, 1, 1)
+    reloaded_array = load.load_img_sequence(str(img_sequence_file))
 
     assert (reloaded_array == start_array).all()
 
@@ -53,7 +61,7 @@ def test_load_img_sequence(tmpdir, start_array):
 def test_to_nii(tmpdir, start_array):  # Also tests load_nii
     folder = str(tmpdir)
     nii_path = os.path.join(folder, "test_array.nii")
-    save.to_nii(start_array, nii_path)
+    save.to_nii(start_array, nii_path, scale=(1, 1, 1))
     assert (load.load_nii(nii_path, as_array=True) == start_array).all()
 
 
