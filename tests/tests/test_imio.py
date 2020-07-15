@@ -54,11 +54,11 @@ def test_to_nii(tmpdir, start_array):  # Also tests load_nii
     folder = str(tmpdir)
     nii_path = os.path.join(folder, "test_array.nii")
     save.to_nii(start_array, nii_path)
-    assert (load.load_nii(nii_path).get_data() == start_array).all()
+    assert (
+        np.asanyarray(load.load_nii(nii_path).dataobj) == start_array
+    ).all()
 
 
 def test_scale_z(start_array):
-    assert (
-        utils.scale_z(start_array, 0.5).shape[0] == start_array.shape[0] / 2
-    )
+    assert utils.scale_z(start_array, 0.5).shape[0] == start_array.shape[0] / 2
     assert utils.scale_z(start_array, 2).shape[0] == start_array.shape[0] * 2
