@@ -387,8 +387,11 @@ def threaded_load_from_sequence(
             break
         else:
             end_idx = start_idx + n_paths_per_subsequence
-            end_idx = end_idx if end_idx < len(paths_sequence) else -1
-            sub_paths = paths_sequence[start_idx:end_idx]
+
+            if end_idx <= len(paths_sequence):
+                sub_paths = paths_sequence[start_idx:end_idx]
+            else:
+                sub_paths = paths_sequence[start_idx:]
 
         process = pool.submit(
             load_from_paths_sequence,

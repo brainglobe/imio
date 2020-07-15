@@ -12,7 +12,7 @@ from imio import load, save, utils
 
 @pytest.fixture()
 def layer():
-    return np.tile(np.array([1, 2, 3, 4]), (4, 1))
+    return np.tile(np.array([1, 2, 3, 4]), (10, 1))
 
 
 @pytest.fixture()
@@ -58,7 +58,7 @@ def test_load_img_sequence(tmpdir, start_array):
     )
 
     reloaded_array = load.load_any(
-        str(img_sequence_file), sort_input_file=True
+        str(img_sequence_file), sort_input_file=True, load_parallel=True
     )
     assert (reloaded_array == start_array).all()
 
