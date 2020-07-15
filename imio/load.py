@@ -341,6 +341,8 @@ def load_image_series(
             y_scaling_factor,
             anti_aliasing=anti_aliasing,
         )
+
+    img = np.moveaxis(img, 2, 0)  # back to z first
     if z_scaling_factor != 1:
         img = scale_z(img, z_scaling_factor)
 
@@ -397,7 +399,7 @@ def threaded_load_from_sequence(
         )
         stacks.append(process)
     stack = np.dstack([s.result() for s in stacks])
-    return np.moveaxis(stack, 2, 0)  # back to z first
+    return stack
 
 
 def load_from_paths_sequence(
