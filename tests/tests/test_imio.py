@@ -77,6 +77,44 @@ def test_to_nrrd(tmpdir, start_array):  # Also tests load_nrrd
     assert (load.load_any(nrrd_path, as_numpy=True) == start_array).all()
 
 
+def test_scaling(tmpdir, start_array):
+    scale = 3
+    shape = (
+        start_array.shape[0] * scale,
+        start_array.shape[1] * scale,
+        start_array.shape[2] * scale,
+    )
+
+    folder = str(tmpdir)
+
+    # tiff series
+    save.to_tiff_series(start_array, os.path.join(folder, "start_array"))
+    reloaded_array = load.load_any(
+        folder,
+        x_scaling_factor=scale,
+        y_scaling_factor=scale,
+        z_scaling_factor=scale,
+    )
+    assert shape == reloaded_array.shape
+
+    # tiff stack
+    save.to_tiff(start_array, os.path.join(folder, "image.tif"))
+    reloaded_array = load.load_any(
+        os.path.join(folder, "image.tif"),
+        x_scaling_factor=scale,
+        y_scaling_factor=scale,
+        z_scaling_factor=scale,
+    )
+    assert shape == reloaded_array.shape
+
+
+def test_cant_guess(tmpdir):
+    file = str(tmpdir / "data.abc")
+
+    with pytest.raises(NotImplementedError):
+        assert load.load_any(file)
+
+
 def test_scale_z(start_array):
     assert utils.scale_z(start_array, 0.5).shape[0] == start_array.shape[0] / 2
     assert utils.scale_z(start_array, 2).shape[0] == start_array.shape[0] * 2
