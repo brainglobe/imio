@@ -49,8 +49,8 @@ reloaded_volume = load.load_any("./")
 (volume == reloaded_volume).all() # True
 
 # repeat, saving as a nifti file
-save.to_nii(volume, "image")
-reloaded_volume = load.load_any("./")
+save.to_nii(volume, "image.nii")
+reloaded_volume = load.load_any("image.nii")
 (volume == reloaded_volume).all() # True
 ```
 
