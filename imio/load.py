@@ -191,7 +191,7 @@ def load_nii(src_path, as_array=False, as_numpy=False):
     src_path = str(src_path)
     nii_img = nib.load(src_path)
     if as_array:
-        image = nii_img.get_data()
+        image = nii_img.get_fdata()
         if as_numpy:
             image = np.array(image)
 
