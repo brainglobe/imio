@@ -4,6 +4,9 @@ import pytest
 import numpy as np
 
 from tifffile import tifffile
+
+from imlib.general.system import get_sorted_file_paths, get_num_processes
+
 from imio import load, save, utils
 
 
@@ -37,7 +40,7 @@ def test_to_tiff_stack(tmpdir, start_array):
 def test_to_tiff_series(tmpdir, start_array):
     folder = str(tmpdir)
     save.to_tiff_series(start_array, os.path.join(folder, "start_array"))
-    reloaded_array = load.load_from_folder(folder)
+    reloaded_array = load.load_any(folder)
     assert (reloaded_array == start_array).all()
 
 
@@ -53,8 +56,10 @@ def test_load_img_sequence(tmpdir, start_array):
             ]
         )
     )
-    reloaded_array = load.load_img_sequence(str(img_sequence_file))
 
+    reloaded_array = load.load_any(
+        str(img_sequence_file), sort_input_file=True
+    )
     assert (reloaded_array == start_array).all()
 
 
@@ -62,9 +67,41 @@ def test_to_nii(tmpdir, start_array):  # Also tests load_nii
     folder = str(tmpdir)
     nii_path = os.path.join(folder, "test_array.nii")
     save.to_nii(start_array, nii_path, scale=(1, 1, 1))
-    assert (load.load_nii(nii_path, as_array=True) == start_array).all()
+    assert (load.load_any(nii_path, as_numpy=True) == start_array).all()
+
+
+def test_to_nrrd(tmpdir, start_array):  # Also tests load_nrrd
+    folder = str(tmpdir)
+    nrrd_path = os.path.join(folder, "test_array.nrrd")
+    save.to_nrrd(start_array, nrrd_path)
+    assert (load.load_any(nrrd_path, as_numpy=True) == start_array).all()
 
 
 def test_scale_z(start_array):
     assert utils.scale_z(start_array, 0.5).shape[0] == start_array.shape[0] / 2
     assert utils.scale_z(start_array, 2).shape[0] == start_array.shape[0] * 2
+
+
+def test_insufficient_memory(start_array, tmpdir):
+    x_scaling_factor = y_scaling_factor = z_scaling_factor = 10 ** 1000
+    folder = str(tmpdir)
+    save.to_tiff_series(start_array, os.path.join(folder, "start_array"))
+
+    with pytest.raises(utils.ImioLoadException):
+        assert load.load_from_folder(
+            folder,
+            x_scaling_factor=x_scaling_factor,
+            y_scaling_factor=y_scaling_factor,
+            z_scaling_factor=z_scaling_factor,
+        )
+
+
+def test_get_size_image_from_file_paths(start_array, tmpdir):
+    folder = str(tmpdir)
+    save.to_tiff_series(start_array, os.path.join(folder, "start_array"))
+    shape = start_array.shape
+    assert utils.get_size_image_from_file_paths(folder) == {
+        "x": shape[2],
+        "y": shape[1],
+        "z": shape[0],
+    }

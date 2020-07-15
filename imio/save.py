@@ -1,5 +1,7 @@
 import tifffile
 import warnings
+import nrrd
+
 import numpy as np
 
 
@@ -38,13 +40,12 @@ def to_tiff(img_volume, dest_path):
 
     :param np.ndarray img_volume: The image to be saved
     :param dest_path: Where to save the tiff stack
-    :return:
     """
     dest_path = str(dest_path)
     tifffile.imsave(dest_path, img_volume)
 
 
-def to_tiff_series(img_volume, path_prefix, path_suffix=""):
+def to_tiff_series(img_volume, path_prefix, path_suffix="", extension=".tif"):
     """
     Save the image volume (numpy array) as a sequence of tiff planes.
     Each plane will have a filepath of the following for:
@@ -53,17 +54,23 @@ def to_tiff_series(img_volume, path_prefix, path_suffix=""):
     :param np.ndarray img_volume: The image to be saved
     :param str path_prefix:  The prefix for each plane
     :param str path_suffix: The suffix for each plane
-    :return:
     """
     z_size = img_volume.shape[0]
     pad_width = int(round(z_size / 10)) + 1
-    # if z_size > 10 ** pad_width:
-    #     raise ValueError(
-    #         f"Not enough padding digits ({pad_width}) for value: {z_size}"
-    #     )
     for i in range(z_size):
         img = img_volume[i, :, :]
-        dest_path = "{}_{}{}.tif".format(
-            path_prefix, str(i).zfill(pad_width), path_suffix
+        dest_path = (
+            f"{path_prefix}_{str(i).zfill(pad_width)}{path_suffix}{extension}"
         )
         tifffile.imsave(dest_path, img)
+
+
+def to_nrrd(img_volume, dest_path):
+    """
+    Saves the image volume (numpy array) as nrrd
+
+    :param np.ndarray img_volume: The image to be saved
+    :param dest_path: Where to save the nrrd image
+    """
+    dest_path = str(dest_path)
+    nrrd.write(dest_path, img_volume)

@@ -8,8 +8,8 @@ import numpy as np
 
 from skimage import transform
 from tqdm import tqdm
-from natsort import natsorted
 from concurrent.futures import ProcessPoolExecutor
+from natsort import natsorted
 
 from imlib.general.system import get_sorted_file_paths, get_num_processes
 
@@ -455,30 +455,3 @@ def load_from_paths_sequence(
                 )
         volume[:, :, i] = img
     return volume
-
-
-def generate_paths_sequence_file(
-    input_folder,
-    output_file_path,
-    sort=True,
-    prefix=None,
-    suffix=None,
-    match_string=None,
-):
-    input_folder = str(input_folder)
-    paths = []
-    for root, dirs, files in os.walk(input_folder):
-        for filename in files:
-            if prefix is not None and not filename.startswith(prefix):
-                continue
-            if suffix is not None and not filename.endswith(suffix):
-                continue
-            if match_string is not None and match_string not in filename:
-                continue
-            paths.append(os.path.join(root, filename))
-
-    if sort:
-        paths = natsorted(paths)
-
-    with open(output_file_path, "w") as out_file:
-        out_file.writelines(paths)

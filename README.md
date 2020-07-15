@@ -52,5 +52,10 @@ reloaded_volume = load.load_any("./")
 save.to_nii(volume, "image.nii")
 reloaded_volume = load.load_any("image.nii")
 (volume == reloaded_volume).all() # True
+
+# repeat, saving as a nrrd file
+save.to_nrrd(volume, "image.nrrd")
+reloaded_volume = load.load_any("image.nrrd")
+(volume == reloaded_volume).all() # True
 ```
 
