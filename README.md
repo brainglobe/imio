@@ -7,7 +7,7 @@
     https://travis-ci.com/adamltyson/imio)
 [![Coverage Status](https://coveralls.io/repos/github/adamltyson/imio/badge.svg?branch=master)](https://coveralls.io/github/adamltyson/imio?branch=master)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
-[![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)]()
+[![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](https://github.com/adamltyson/imio)
 
 
 # imio
