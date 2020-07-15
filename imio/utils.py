@@ -1,13 +1,12 @@
-import logging
 import os
-import glob
+import logging
 import psutil
 
 import numpy as np
 from scipy.ndimage import zoom
+from imlib.general.system import get_sorted_file_paths
 
-from natsort import natsorted
-from slurmio import slurmio
+import imio
 
 
 class ImioLoadException(Exception):
@@ -44,9 +43,7 @@ def scale_z(volume, scaling_factor):
     :return:
     """
 
-    volume = np.swapaxes(volume, 1, 2)
-    volume = zoom(volume, (1, scaling_factor, 1), order=1)
-    return np.swapaxes(volume, 1, 2)
+    return zoom(volume, (scaling_factor, 1, 1), order=1)
 
 
 def get_size_image_from_file_paths(file_path, file_extension="tif"):
@@ -67,7 +64,7 @@ def get_size_image_from_file_paths(file_path, file_extension="tif"):
     logging.debug(
         "Loading file: {} to check raw image size" "".format(img_paths[0])
     )
-    image_0 = load_any(img_paths[0])
+    image_0 = imio.load_any(img_paths[0])
     y_shape, x_shape = image_0.shape
 
     image_shape = {"x": x_shape, "y": y_shape, "z": z_shape}
