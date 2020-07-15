@@ -11,15 +11,27 @@
 
 
 # imio
-Loading and saving of image data. Data can be scaled upon loading to save RAM for very large images.
+Loading and saving of image data.
 
-Supports loading of:
-* Tiff stack
-* Tiff series (from a directory, a text file or a list of file paths). Can optionally load in parallel.
+### About
+The aim of imio is to be a lightweight image loading library for the file types
+ supported by [cellfinder](https://github.com/SainsburyWellcomeCentre/cellfinder),
+ [amap](https://github.com/SainsburyWellcomeCentre/amap-python) and
+ [brainreg](https://github.com/brainglobe/brainreg). It is an update to 
+ [brainio](https://github.com/adamltyson/brainio).
+
+#### Supports loading of:
+* Tiff stack `+`
+* Tiff series (from a directory, a text file or a list of file paths). `*+`
 * nrrd
 * nifti (`.nii` & `.nii.gz`)
 
-Supports saving of:
+`*` Supports loading in parallel for speed
+
+`+` Suports scaling on loading. E.g. downsampling to load images bigger than the 
+available RAM
+
+#### Supports saving of:
 * Tiff stack
 * Tiff series
 * nifti 
