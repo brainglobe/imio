@@ -24,7 +24,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     url="https://github.com/adamltyson/imio",
-    author="Adam Tyson",
+    author="Adam Tyson, Charly Rousseau",
     author_email="adam.tyson@ucl.ac.uk",
     classifiers=[
         "Development Status :: 3 - Alpha",
