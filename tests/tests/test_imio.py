@@ -28,14 +28,14 @@ def test_tiff_io(tmpdir, layer):
 
 def test_to_tiffs(tmpdir, start_array):
     folder = str(tmpdir)
-    save.to_tiffs(start_array, os.path.join(folder, "start_array"))
+    save.to_tiff_series(start_array, os.path.join(folder, "start_array"))
     reloaded_array = load.load_from_folder(folder, 1, 1, 1)
     assert (reloaded_array == start_array).all()
 
 
 def test_load_img_sequence(tmpdir, start_array):
     folder = str(tmpdir.mkdir("sub"))
-    save.to_tiffs(start_array, os.path.join(folder, "start_array"))
+    save.to_tiff_series(start_array, os.path.join(folder, "start_array"))
     img_sequence_file = tmpdir.join("imgs_file.txt")
     img_sequence_file.write(
         "\n".join(
@@ -55,7 +55,6 @@ def test_to_nii(tmpdir, start_array):  # Also tests load_nii
     nii_path = os.path.join(folder, "test_array.nii")
     save.to_nii(start_array, nii_path)
     assert (load.load_nii(nii_path, as_array=True) == start_array).all()
-
 
 
 def test_scale_z(start_array):

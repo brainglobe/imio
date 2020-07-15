@@ -11,10 +11,46 @@
 
 
 # imio
-Loading and saving of image data.
+Loading and saving of image data. Data can be scaled upon loading to save RAM for very large images.
 
+Supports loading of:
+* Tiff stack
+* Tiff series (from a directory, a text file or a list of file paths). Can optionally load in parallel.
+* nrrd
+* nifti (`.nii` & `.nii.gz`)
+
+Supports saving of:
+* Tiff stack
+* Tiff series
+* nifti 
 
 ### To install
 ```bash
 pip install imio
 ```
+
+### To use
+```python
+import numpy as np
+from imio import load, save
+
+# make a 3D image volume
+layer = np.tile(np.array([1, 2, 3, 4]), (4, 1))
+volume = np.dstack((layer, 2 * layer, 3 * layer, 4 * layer))
+
+# save as tiff stack, reload and check it's correct
+save.to_tiff(volume, "image.tiff")
+reloaded_volume = load.load_any("image.tiff")
+(volume == reloaded_volume).all() # True
+
+# repeat, saving as a series of 2D tiffs
+save.to_tiff_series(volume, "image")
+reloaded_volume = load.load_any("./")
+(volume == reloaded_volume).all() # True
+
+# repeat, saving as a nifti file
+save.to_nii(volume, "image")
+reloaded_volume = load.load_any("./")
+(volume == reloaded_volume).all() # True
+```
+
