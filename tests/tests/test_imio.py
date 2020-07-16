@@ -5,8 +5,6 @@ import numpy as np
 
 from tifffile import tifffile
 
-from imlib.general.system import get_sorted_file_paths, get_num_processes
-
 from imio import load, save, utils
 
 

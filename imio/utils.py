@@ -1,8 +1,6 @@
-import os
 import logging
 import psutil
 
-import numpy as np
 from scipy.ndimage import zoom
 from imlib.general.system import get_sorted_file_paths
 
