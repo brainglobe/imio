@@ -3,8 +3,8 @@
 [![Downloads](https://pepy.tech/badge/imio)](https://pepy.tech/project/imio)
 [![Wheel](https://img.shields.io/pypi/wheel/imio.svg)](https://pypi.org/project/imio)
 [![Development Status](https://img.shields.io/pypi/status/imio.svg)](https://github.com/adamltyson/imio)
-[![Travis](https://img.shields.io/travis/com/adamltyson/imio?label=Travis%20CI)](
-    https://travis-ci.com/adamltyson/imio)
+[![Tests](https://img.shields.io/github/workflow/status/adamltyson/imio/tests)](
+    https://github.com/adamltyson/imio/actions)
 [![Coverage Status](https://coveralls.io/repos/github/adamltyson/imio/badge.svg?branch=master)](https://coveralls.io/github/adamltyson/imio?branch=master)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 [![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](https://github.com/adamltyson/imio)
@@ -15,8 +15,7 @@ Loading and saving of image data.
 
 ### About
 The aim of imio is to be a lightweight image loading library for the file types
- supported by [cellfinder](https://github.com/SainsburyWellcomeCentre/cellfinder),
- [amap](https://github.com/SainsburyWellcomeCentre/amap-python) and
+ supported by [cellfinder](https://github.com/brainglobe/cellfinder), and
  [brainreg](https://github.com/brainglobe/brainreg). It is an update to 
  [brainio](https://github.com/adamltyson/brainio).
 
