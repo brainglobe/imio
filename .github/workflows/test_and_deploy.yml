@@ -42,3 +42,8 @@ jobs:
           pip install .[dev]
       - name: Test
         run: pytest
+      - name: Coveralls
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            coveralls
