@@ -33,7 +33,7 @@ setup(
     python_requires=">=3.6",
     packages=find_packages(),
     include_package_data=True,
-    url="https://github.com/adamltyson/imio",
+    url="https://github.com/brainglobe/imio",
     author="Adam Tyson, Charly Rousseau",
     author_email="adam.tyson@ucl.ac.uk",
     classifiers=[
