@@ -46,7 +46,7 @@ def to_tiff(img_volume, dest_path):
     tifffile.imsave(dest_path, img_volume)
 
 
-def to_tiff_series(img_volume, path_prefix, path_suffix="", extension=".tif"):
+def to_tiffs(img_volume, path_prefix, path_suffix="", extension=".tif"):
     """
     Save the image volume (numpy array) as a sequence of tiff planes.
     Each plane will have a filepath of the following for:
@@ -63,7 +63,7 @@ def to_tiff_series(img_volume, path_prefix, path_suffix="", extension=".tif"):
         dest_path = (
             f"{path_prefix}_{str(i).zfill(pad_width)}{path_suffix}{extension}"
         )
-        tifffile.imsave(dest_path, img)
+        tifffile.imwrite(dest_path, img)
 
 
 def to_nrrd(img_volume, dest_path):
