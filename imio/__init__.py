@@ -1,4 +1,4 @@
-__author__ = "Adam Tyson, Charly Rousseau"
+__author__ = "Charly Rousseau, Adam Tyson"
 __version__ = "0.2.0"
 
 from imio.load import *
