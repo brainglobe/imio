@@ -1,4 +1,7 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/imio.svg)](https://pypi.org/project/imio)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![PyPI](https://img.shields.io/pypi/v/imio.svg)](https://pypi.org/project/imio)
 [![Downloads](https://pepy.tech/badge/imio)](https://pepy.tech/project/imio)
 [![Wheel](https://img.shields.io/pypi/wheel/imio.svg)](https://pypi.org/project/imio)
@@ -44,6 +47,20 @@ Contributions to imio are more than welcome. Please see the [contributing guide]
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.jscholler.com/"><img src="https://avatars.githubusercontent.com/u/23705332?v=4?s=100" width="100px;" alt="Jules Scholler"/><br /><sub><b>Jules Scholler</b></sub></a><br /><a href="https://github.com/brainglobe/imio/commits?author=JulesScholler" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
