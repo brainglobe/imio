@@ -7,7 +7,6 @@
 [![codecov](https://codecov.io/gh/brainglobe/imio/branch/master/graph/badge.svg?token=M1BXRDJ9V4)](https://codecov.io/gh/brainglobe/imio)[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 [![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](https://github.com/brainglobe/imio)
 
-
 # imio
 Loading and saving of image data.
 
@@ -40,9 +39,7 @@ pip install imio
 ## Contributing
 Contributions to imio are more than welcome. Please see the [contributing guide](https://github.com/brainglobe/.github/blob/main/CONTRIBUTING.md).
 
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -51,6 +48,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://adamltyson.com"><img src="https://avatars.githubusercontent.com/u/13147259?v=4?s=100" width="100px;" alt="Adam Tyson"/><br /><sub><b>Adam Tyson</b></sub></a><br /><a href="https://github.com/brainglobe/imio/commits?author=adamltyson" title="Code">💻</a> <a href="#infra-adamltyson" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-adamltyson" title="Maintenance">🚧</a> <a href="https://github.com/brainglobe/imio/commits?author=adamltyson" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.davidstansby.com"><img src="https://avatars.githubusercontent.com/u/6197628?v=4?s=100" width="100px;" alt="David Stansby"/><br /><sub><b>David Stansby</b></sub></a><br /><a href="https://github.com/brainglobe/imio/commits?author=dstansby" title="Tests">⚠️</a> <a href="https://github.com/brainglobe/imio/commits?author=dstansby" title="Code">💻</a> <a href="#maintenance-dstansby" title="Maintenance">🚧</a> <a href="https://github.com/brainglobe/imio/pulls?q=is%3Apr+reviewed-by%3Adstansby" title="Reviewed Pull Requests">👀</a> <a href="#infra-dstansby" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.jscholler.com/"><img src="https://avatars.githubusercontent.com/u/23705332?v=4?s=100" width="100px;" alt="Jules Scholler"/><br /><sub><b>Jules Scholler</b></sub></a><br /><a href="https://github.com/brainglobe/imio/commits?author=JulesScholler" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jaimergp"><img src="https://avatars.githubusercontent.com/u/2559438?v=4?s=100" width="100px;" alt="jaimergp"/><br /><sub><b>jaimergp</b></sub></a><br /><a href="https://github.com/brainglobe/imio/commits?author=jaimergp" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/crousseau"><img src="https://avatars.githubusercontent.com/u/13150960?v=4?s=100" width="100px;" alt="Charly Rousseau"/><br /><sub><b>Charly Rousseau</b></sub></a><br /><a href="https://github.com/brainglobe/imio/commits?author=crousseau" title="Code">💻</a> <a href="#ideas-crousseau" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/brainglobe/imio/commits?author=crousseau" title="Tests">⚠️</a></td>
     </tr>
   </tbody>
 </table>
@@ -59,5 +60,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
