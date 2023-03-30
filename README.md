@@ -1,4 +1,7 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/imio.svg)](https://pypi.org/project/imio)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![PyPI](https://img.shields.io/pypi/v/imio.svg)](https://pypi.org/project/imio)
 [![Downloads](https://pepy.tech/badge/imio)](https://pepy.tech/project/imio)
 [![Wheel](https://img.shields.io/pypi/wheel/imio.svg)](https://pypi.org/project/imio)
@@ -44,6 +47,20 @@ Contributions to imio are more than welcome. Please see the [contributing guide]
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/crousseau"><img src="https://avatars.githubusercontent.com/u/13150960?v=4?s=100" width="100px;" alt="Charly Rousseau"/><br /><sub><b>Charly Rousseau</b></sub></a><br /><a href="https://github.com/brainglobe/imio/commits?author=crousseau" title="Code">💻</a> <a href="#ideas-crousseau" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/brainglobe/imio/commits?author=crousseau" title="Tests">⚠️</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
