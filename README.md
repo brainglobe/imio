@@ -54,7 +54,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="http://adamltyson.com"><img src="https://avatars.githubusercontent.com/u/13147259?v=4?s=100" width="100px;" alt="Adam Tyson"/><br /><sub><b>Adam Tyson</b></sub></a><br /><a href="https://github.com/brainglobe/imio/commits?author=adamltyson" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://adamltyson.com"><img src="https://avatars.githubusercontent.com/u/13147259?v=4?s=100" width="100px;" alt="Adam Tyson"/><br /><sub><b>Adam Tyson</b></sub></a><br /><a href="https://github.com/brainglobe/imio/commits?author=adamltyson" title="Code">💻</a> <a href="#infra-adamltyson" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-adamltyson" title="Maintenance">🚧</a> <a href="https://github.com/brainglobe/imio/commits?author=adamltyson" title="Tests">⚠️</a></td>
     </tr>
   </tbody>
 </table>
