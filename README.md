@@ -1,7 +1,4 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/imio.svg)](https://pypi.org/project/imio)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![PyPI](https://img.shields.io/pypi/v/imio.svg)](https://pypi.org/project/imio)
 [![Downloads](https://pepy.tech/badge/imio)](https://pepy.tech/project/imio)
 [![Wheel](https://img.shields.io/pypi/wheel/imio.svg)](https://pypi.org/project/imio)
