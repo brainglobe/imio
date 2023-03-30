@@ -1,7 +1,4 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/imio.svg)](https://pypi.org/project/imio)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![PyPI](https://img.shields.io/pypi/v/imio.svg)](https://pypi.org/project/imio)
 [![Downloads](https://pepy.tech/badge/imio)](https://pepy.tech/project/imio)
 [![Wheel](https://img.shields.io/pypi/wheel/imio.svg)](https://pypi.org/project/imio)
@@ -10,7 +7,6 @@
     https://github.com/brainglobe/imio/actions)
 [![codecov](https://codecov.io/gh/brainglobe/imio/branch/master/graph/badge.svg?token=M1BXRDJ9V4)](https://codecov.io/gh/brainglobe/imio)[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 [![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](https://github.com/brainglobe/imio)
-[![All Contributors](https://img.shields.io/github/all-contributors/brainglobe/imio?color=ee8449&style=flat-square)](#contributors)
 
 # imio
 Loading and saving of image data.
