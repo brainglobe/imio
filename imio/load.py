@@ -1,6 +1,7 @@
 import logging
 import math
 import os
+import platform
 import warnings
 from concurrent.futures import ProcessPoolExecutor
 
@@ -357,6 +358,7 @@ def threaded_load_from_sequence(
     y_scaling_factor=1.0,
     anti_aliasing=True,
     n_free_cpus=2,
+    n_max_processes=None,
 ):
     """
     Use multiprocessing to load a brain from a sequence of image paths.
@@ -371,12 +373,20 @@ def threaded_load_from_sequence(
         the image prior to down-scaling. It is crucial to filter when
         down-sampling the image to avoid aliasing artifacts.
     :param int n_free_cpus: Number of cpu cores to leave free.
+    :param int n_max_processes: Maximum number of processes
     :return: The loaded and scaled brain
     :rtype: np.ndarray
     """
 
     stacks = []
-    n_processes = get_num_processes(min_free_cpu_cores=n_free_cpus)
+    # On Windows, max_workers must be less than or equal to 61
+    # https://docs.python.org/3/library/concurrent.futures.html#processpoolexecutor
+    if platform.system() == "Windows":
+        n_max_processes = 61
+
+    n_processes = get_num_processes(
+        min_free_cpu_cores=n_free_cpus, n_max_processes=n_max_processes
+    )
 
     # WARNING: will not work with interactive interpreter.
     pool = ProcessPoolExecutor(max_workers=n_processes)
