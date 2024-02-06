@@ -24,6 +24,7 @@ dependencies = [
     "nibabel >= 2.1.0",
     "numpy",
     "psutil",
+    "pyarrow",
     "pynrrd",
     "scikit-image",
     "tifffile",
