@@ -1,3 +1,10 @@
+# This package has moved!
+
+`imio` has been merged into [`brainglobe-utils`](https://github.com/brainglobe/brainglobe-utils) and will no longer be provided standalone.
+If you want to continue using this package's functionality, we recommend you install `brainglobe-utils` and the corresponding submodule.
+
+---
+
 [![Python Version](https://img.shields.io/pypi/pyversions/imio.svg)](https://pypi.org/project/imio)
 [![PyPI](https://img.shields.io/pypi/v/imio.svg)](https://pypi.org/project/imio)
 [![Downloads](https://pepy.tech/badge/imio)](https://pepy.tech/project/imio)
