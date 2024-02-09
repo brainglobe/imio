@@ -94,6 +94,5 @@ python =
 extras =
     dev
 commands =
-    pytest -v --color=yes --cov=imio --cov-report=xml
-
+    pytest -v --color=yes --cov=imio --cov-report=xml -W ignore::DeprecationWarning
 """
